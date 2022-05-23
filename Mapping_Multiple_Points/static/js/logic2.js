@@ -81,16 +81,21 @@ let cityData = cities;
 //  });
 
 // 13.4.2 Change the marker for each city to a circle that has a radius equivalent to the city's population
+//Skill drill
 cityData.forEach(function(city) {
     console.log(city)
     L.circleMarker(city.location, {
-        radius: city.population/100000 //Divide the value by 100000 as the radii are too large
+        radius: city.population/100000,
+        color: "orange",
+        fillColor: "#f7bc74",
+        weight: 4
     })
     .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Population " + city.population.toLocaleString() + "</h3>") // Create a popup to the marker and format the population with a thousands separator by using the toLocaleString() method
   .addTo(map);
  });
 
-let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+// Skill Drill (dark map)
+let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     accessToken: API_KEY
