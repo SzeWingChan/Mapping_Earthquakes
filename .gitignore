@@ -1,6 +1,7 @@
 #Added files
 config.js
-logic2.js
+tectonic_plate_starter_logic.js
+major_eq_starter_logic.js
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
